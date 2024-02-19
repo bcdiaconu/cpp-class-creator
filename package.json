@@ -60,8 +60,40 @@
 							"boolean"
 						],
 						"default": null,
-						"description": "Specifies the path, where the class is created or set it to true when you want the path to be dynamically inputted. [setting: cpp.creator.setPath = \"path\" or true]"
+						"description": "Specifies the path, where the class is created or set it to true when you want the path to be dynamically inputted. [setting: cpp.creator.setPath = \"path\" or true]; this gets overriden by setIncludeRootDirName and setSourceRootDirName"
 					},
+					"cpp.creator.syncDirStructure": {
+						"type": [
+							"boolean"
+						],
+						"default": true,
+						"description": "Create same directory structure in both location of include and source files"
+					},
+					"cpp.creator.setRootOccurrence": {
+						"type": [
+							"string"
+						],
+						"default": "Last",
+						"enum": ["First", "Last", "Path"],
+						"description": "Specify if either a relative path to workspace is provided or which occurrence of the root directory should be taken into account [First, Last], for both setIncludeRootDirName and setSourceRootDirName"
+					},
+					"cpp.creator.setIncludeRootDirName": {
+						"type": [
+							"string",
+							"null"
+						],
+						"default": null,
+						"description": "Specify the directory where include files should be created; if empty, setPath setting is used to determine location"
+					},
+					"cpp.creator.setSourceRootDirName": {
+						"type": [
+							"string",
+							"null"
+						],
+						"default": null,
+						"description": "Specify the directory where source files should be created; if empty, setPath setting is used to determine location"
+					},
+
 					"cpp.creator.headerFileContentPreset": {
 						"type": "string",
 						"editPresentation": "multilineText",
